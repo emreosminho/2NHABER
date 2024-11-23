@@ -61,8 +61,5 @@ Bu testin amacı, [2NHABER](https://2nhaber.com/) web sitesinin performansını 
     - **Caching**: Caching mekanizmalarının daha verimli kullanılması ile yanıt sürelerinin iyileştirilmesi sağlanabilir.
     - **Veritabanı Optimizasyonu**: Veritabanı sorgularının optimizasyonu ile yanıt süreleri azaltılabilir.
 
-## Sonraki Adımlar
-- Test sonuçlarına göre gerekli iyileştirme ve optimizasyonlar yapılacak.
-- Testi daha fazla kullanıcı ile ve farklı sayfalarda tekrar etmek önerilmektedir.
-- Testlerin farklı senaryolarla tekrarı, performansın daha ayrıntılı bir şekilde incelenmesine olanak sağlayacaktır.
+
 
