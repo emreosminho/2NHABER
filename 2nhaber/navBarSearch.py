@@ -17,7 +17,6 @@ search_icon = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.CSS_SELECTOR, "div.elementor-widget-cmsmasters-search__popup-trigger-container span.elementor-widget-cmsmasters-search__popup-trigger-inner-icon"))
 )
 
-
 search_icon.click()
 
 search_input = WebDriverWait(driver, 10).until(
@@ -26,3 +25,27 @@ search_input = WebDriverWait(driver, 10).until(
 search_input.send_keys("İstanbul")
 
 search_input.send_keys(Keys.RETURN)
+
+try:
+    headlines = WebDriverWait(driver, 10).until(
+        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "h3.entry-title a"))
+    )
+
+    headlines_list = [headline for headline in headlines]
+    for i, headline in enumerate(headlines_list, start=1):
+        print(f"{i}. Başlık: {headline.text}")
+
+    # Belirli sıradaki başlığa tıkla (örnek: 1. başlık)
+    target_index = 1
+
+    if target_index <= len(headlines_list):
+        print(f"\nTıklanıyor: {headlines_list[target_index - 1].text}")
+        headlines_list[target_index - 1].click()
+    else:
+        print(f"Belirtilen sıradaki başlık bulunamadı: {target_index}")
+except Exception as e:
+    print(f"Hata oluştu: {e}")
+finally:
+    driver.quit()
+
+
